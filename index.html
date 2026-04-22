@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yash Balwani | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-2;
+}
+
+.background img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(8) blur(2px);
+}
+
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.7), #0a0a0f);
+    z-index:-1;
+}
+
+/* WRAPPER */
+.wrapper{
+    padding:80px 20px;
+    text-align:center;
+}
+
+/* 🔥 HERO BOX */
+.hero-box{
+    max-width:400px;
+    height:450px;
+    margin:auto;
+    padding:40px 20px;
+    border-radius:25px;
+    position:relative;
+
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(0);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    /* GLOW */
+    box-shadow:
+        0 0 60px rgba(0,247,255,0.15),
+        0 0 120px rgba(0,247,255,0.1),
+        0 0 180px rgba(0,247,255,0.08);
+
+    animation:fadeIn 1.5s ease;
+}
+
+/* OUTER SOFT GLOW */
+.hero-box::before{
+    content:'';
+    position:absolute;
+    inset:-2px;
+    border-radius:25px;
+    background:radial-gradient(circle, rgba(0,247,255,0.4), transparent 70%);
+    filter:blur(25px);
+    opacity:0.7;
+    z-index:-1;
+}
+
+/* 🔵 LOGO GLOW */
+.logo{
+    width:210px;
+    height:210px;
+    border-radius:50%;
+    margin-bottom:15px;
+    position:relative;
+
+    border:3px solid rgba(0,247,255,0.7);
+
+    box-shadow:
+        0 0 20px rgba(0,247,255,0.6),
+        0 0 50px rgba(0,247,255,0.4),
+        0 0 100px rgba(0,247,255,0.25);
+
+    animation:logoGlow 2s ease-in-out infinite alternate;
+}
+
+/* LOGO OUTER AURA */
+.logo::before{
+    content:'';
+    position:absolute;
+    inset:-12px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(0,247,255,0.4), transparent 70%);
+    filter:blur(20px);
+    z-index:-1;
+}
+
+/* TEXT */
+h1{
+    font-size:32px;
+}
+
+h3{
+    font-size:16px;
+    margin-top:5px;
+}
+
+h1 span, h3 span{
+    color:#00f7ff;
+}
+
+/* INFO SECTION */
+.section{
+    margin-top:60px;
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:30px 20px;
+    background:rgba(255,255,255,0.05);
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    animation:fadeUp 1s ease;
+}
+
+.info{
+    color:#bbb;
+    line-height:1.8;
+}
+
+/* LINKS */
+.links-section{
+    margin-top:40px;
+    padding:30px 20px;
+    max-width:450px;
+    margin-left:auto;
+    margin-right:auto;
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+/* BUTTONS */
+.links-section a{
+    padding:14px 25px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:500;
+
+    color:#00f7ff;
+    border:1px solid rgba(0,247,255,0.4);
+
+    background:rgba(0,247,255,0.05);
+
+    box-shadow:
+        0 0 15px rgba(0,247,255,0.3),
+        0 0 40px rgba(0,247,255,0.15);
+
+    transition:0.3s;
+}
+
+.links-section a:hover{
+    transform:translateY(-5px) scale(1.05);
+
+    background:#00f7ff;
+    color:black;
+
+    box-shadow:
+        0 0 30px #00f7ff,
+        0 0 80px rgba(0,247,255,0.6);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* LOGO GLOW ANIMATION */
+@keyframes logoGlow{
+    0%{
+        box-shadow:
+            0 0 15px rgba(0,247,255,0.4),
+            0 0 40px rgba(0,247,255,0.2);
+    }
+    100%{
+        box-shadow:
+            0 0 30px rgba(0,247,255,0.8),
+            0 0 80px rgba(0,247,255,0.5),
+            0 0 140px rgba(0,247,255,0.3);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <img src="assets/bg.png">
+</div>
+<div class="overlay"></div>
+
+<div class="wrapper">
+
+    <!-- HERO -->
+    <div class="hero-box">
+        <img src="assets/IMG_2166.JPG" class="logo">
+        <h1>Yash <span>Balwani</span></h1>
+        <h3>A Forex <span>Trader</span></h3>
+    </div>
+
+    <!-- INFO -->
+    <div class="section">
+        
+        <div style="margin-top:25px;">
+            <h2 style="color:#00f7ff;">About Me</h2>
+            <p style="margin-top:10px;color:#aaa;">
+                I am a forex trader and entrepreneur focused on growth, discipline and consistency.
+               <br><br><br>
+               
+                <div class="info">
+                    Founder of Deep Shree Herbals 🌿<br>
+                    Forex Trader 📈<br>
+                    Earned 7000+ USDT 💰
+                </div>
+            </p>
+        </div>
+    </div>
+
+    <!-- LINKS -->
+    <div class="links-section">
+        <a href="#">Instagram</a>
+        <a href="#">WhatsApp</a>
+    </div>
+
+</div>
+
+</body>
+</html>
